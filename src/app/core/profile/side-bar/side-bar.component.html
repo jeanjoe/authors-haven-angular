@@ -1,0 +1,26 @@
+<div class="bg-white border-l border-r border-indigo-100 h-full py-5">
+  <div class="flex flex-wrap justify-center">
+    <img class="mx-auto my-auto w-24 sm:h-24 border-4 rounded-full mb-4 sm:mb-0 sm:mr-4 sm:ml-0" src="assets/images/tran-mau-tri-tam-tZnbakTUcTI-unsplash.jpg" alt="">
+    <div class="w-full text-center text-indigo-700 text-xl my-3 leading-tight font-semibold">{{ currentUser?.user?.username }}</div>
+  </div>
+
+  <div class="bg-white w-full mt-1 items-center">
+    <div class="sm:flex justify-center sm:items-center px-6 py-4 border-t-2 border-indigo-100">
+      <div class="text-center sm:text-left sm:flex-grow">
+        <div class="mb-4">
+          <p class="text-sm leading-tight text-grey-dark my-1"><strong>Email: </strong> {{ currentUser?.user?.email }}</p>
+          <p class="text-sm leading-tight text-grey-dark my-1"><strong>Reg Date: </strong> {{ currentUser?.user?.createdAt | date:'medium' }} </p>
+        </div>
+        <div>
+          <button class="text-xs font-semibold px-3 py-1 leading-normal bg-white border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white">Edit Profile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a [routerLink]="['/dashboard/articles']" class="block bg-white border-t teext-baseline font-semibold border-indigo-100 py-4 px-6 hover:text-indigo-600">Articles [{{ articles.length }}]</a>
+  <a [routerLink]="['/dashboard/followers']" class="block bg-white border-t teext-baseline font-semibold border-indigo-100 py-4 px-6 hover:text-indigo-600">Follower [{{ followers.length }}]</a>
+  <a [routerLink]="['/dashboard/followings']" class="block bg-white border-t border-b teext-baseline font-semibold border-indigo-100 py-4 px-6 hover:text-indigo-600">
+    Followings ({{ followings.length }})
+  </a>
+</div>

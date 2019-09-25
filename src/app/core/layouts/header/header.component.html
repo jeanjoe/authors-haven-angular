@@ -1,0 +1,28 @@
+<div class="flex items-center justify-between flex-wrap bg-indigo-800 border-b-4 border-pink-500 py-4 mb-0">
+  <div class="container mx-auto">
+    <nav class="flex items-center justify-between flex-wrap">
+      <div class="flex items-center flex-no-shrink text-white mr-6">
+        <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/>
+        </svg>
+        <a [routerLink]="['/']" class="font-semibold text-xl tracking-tight">Authors Haven</a>
+      </div>
+      <div class="block sm:hidden">
+        <button class="navbar-burger flex items-center px-3 py-2 border rounded text-white border-white hover:text-white hover:border-white">
+          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+          </svg>
+        </button>
+      </div>
+      <div id="main-nav" class="w-full flex-grow sm:flex items-center sm:w-auto hidden">
+        <div class="text-sm sm:flex-grow">
+        </div>
+        <div>
+          <a [routerLink]="['/dashboard/articles/create']" class="no-underline inline-block text-sm px-5 py-3 leading-none border rounded-full text-white border-white hover:border-transparent hover:text-teal-600 hover:bg-white font-bold lg:mt-0">{{ currentUser ? 'Write Article' : 'Getting Started' }}</a>
+          <a [routerLink]="['/dashboard']" *ngIf="currentUser" class="no-underline inline-block text-sm px-5 py-3 mx-2 leading-none border rounded-full text-white border-white hover:border-transparent hover:text-teal-600 hover:bg-white font-bold lg:mt-0">{{ currentUser?.user?.username }}</a>
+          <button *ngIf="currentUser" type="button" (click)="logout()" class="text-red-700">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

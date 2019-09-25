@@ -1,0 +1,14 @@
+<div class="container max-w-2xl py-4 mx-auto">
+  <div *ngIf="loading; else showArticle" class="text-center text-green-700">
+    Loading article...
+  </div>
+
+  <ng-template #showArticle>
+    <div *ngIf="errorMessage" class="text-red-700 font-bold text-xl text-center">{{ errorMessage }}</div>
+
+    <div *ngIf="article">
+        <div class="text-gray-700 text-3xl">{{ article.title }}</div>
+        <p>{{ article.body }}</p>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,22 @@
+<div class="container mx-auto flex flex-wrap items-stretch">
+  <div class="w-9/12 py-5 pr-6">
+    <div class="text-black font-light text-2xl mb-2">What's on your mind?</div>
+    <form [formGroup]="forms" (ngSubmit)="onSubmitForm()">
+      <div class="my-5">
+        <input type="text" placeholder="Article Title" formControlName="title" maxlength="100" class="block py-2 bg-transparent text-2xl text-gray-600 w-full border-b focus:outline-none">
+      </div>
+      <div class="my-5">
+        <textarea placeholder="Description" formControlName="title" class="block py-2 bg-transparent text-gray-600 w-full border-b focus:outline-none"></textarea>
+      </div>
+      <div class="my-5">
+        <textarea placeholder="Write your article" formControlName="title" class="block py-2 bg-transparent text-gray-600 w-full border-b focus:outline-none h-48"></textarea>
+      </div>
+      <div class="my-5">
+        <button type="submit" class="uppercase focus:outline-none border p-4">Publish</button>
+      </div>
+    </form>
+  </div>
+  <div class="w-3/12 h-screen">
+    <app-side-bar></app-side-bar>
+  </div>
+</div>

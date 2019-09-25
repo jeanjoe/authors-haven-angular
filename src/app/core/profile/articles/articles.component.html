@@ -1,0 +1,22 @@
+<div class="container mx-auto flex flex-wrap items-stretch">
+  <div class="w-9/12 py-5 pr-6">
+    <div class="text-black font-light text-2xl mb-2"><strong>My articles ({{ articles.length }})</strong></div>
+
+    <div *ngFor="let article of articles">
+      <div class="border p-5 mt-4 bg-white rounded-t">
+        <div class="text-indigo-600 font-bold text-xl mb-2">{{ article?.title }} </div>
+        <hr class="my-4 border">
+        <p class="text-gray-700 text-base">{{ article?.body }}</p>
+        <span *ngFor="let tag of article?.tags" class="inline-block bg-gray-300 rounded-full px-3 text-sm font-bold text-indigo-600 cursor-pointer my-3 mr-2">#{{ tag }}</span>
+      </div>
+      <div class="border-l border-r border-b p-5 mb-4 bg-white">
+        <a href="" class="px-4 py-2 border text-sm lowercase hover:text-white hover:bg-indigo-600 rounded-sm mr-2">View</a>
+        <a href="" class="px-4 py-2 border text-sm lowercase hover:text-white hover:bg-blue-600 rounded-sm mr-2">Edit</a>
+        <a href="" class="px-4 py-2 border text-sm lowercase hover:text-white hover:bg-red-600 rounded-sm mr-2">Delete</a>
+      </div>
+    </div>
+  </div>
+  <div class="w-3/12 h-screen">
+    <app-side-bar (articlesEmitter)="getArticles($event)"></app-side-bar>
+  </div>
+</div>
