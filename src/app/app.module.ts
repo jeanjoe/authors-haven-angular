@@ -14,6 +14,7 @@ import { ErrorInterceptor } from 'src/app/core/helpers/error.interceptor';
 import { JwtInterceptor } from 'src/app/core/helpers/jwt.interceptor';
 import { RegisterComponent } from './core/auth/register/register.component';
 import { FooterComponent } from './core/layouts/footer/footer.component';
+import { UsersComponent } from './core/users/users.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './core/layouts/footer/footer.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    FooterComponent
+    FooterComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
